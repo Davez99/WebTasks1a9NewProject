@@ -1,0 +1,53 @@
+﻿@model WebTasks1a9NewProject.Models.Exec4
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="IdadeEntrada" class="control-label"></label>
+                <input asp-for="IdadeEntrada" class="form-control" />
+                <span asp-validation-for="IdadeEntrada" class="text-danger"></span>
+            </div>
+            @if (ViewBag._concedido == "Concedido")
+            {
+                <div class="form-group">
+                    <label asp-for="IdadeSaida" class="control-label"></label>
+                    <input asp-for="IdadeSaida" class="bg-success" disabled />
+                    <span asp-validation-for="IdadeSaida" class="text-danger"></span>
+                </div>
+            }
+            else if (ViewBag._concedido == "Denegrido")
+            {
+                <div class="form-group">
+                    <label asp-for="IdadeSaida" class="control-label"></label>
+                    <input asp-for="IdadeSaida" class="bg-warning" disabled />
+                    <span asp-validation-for="IdadeSaida" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+
+            }
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@model WebTasks1a9NewProject.Models.Exec3
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Exec3</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Num1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Num1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Num2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Num2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Operador)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Operador)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Resultado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Resultado)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

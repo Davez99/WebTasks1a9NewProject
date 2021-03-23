@@ -1,0 +1,63 @@
+﻿@model WebTasks1a9NewProject.Models.Exec9
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomeUser" class="control-label"></label>
+                <input asp-for="NomeUser" class="form-control" />
+                <span asp-validation-for="NomeUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdadeUser" class="control-label"></label>
+                <input asp-for="IdadeUser" class="form-control" />
+                <span asp-validation-for="IdadeUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PesoUser" class="control-label"></label>
+                <input asp-for="PesoUser" class="form-control" />
+                <span asp-validation-for="PesoUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlturaUser" class="control-label"></label>
+                <input asp-for="AlturaUser" class="form-control" />
+                <span asp-validation-for="AlturaUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaidaUser" class="control-label"></label>
+                <input asp-for="SaidaUser" class="form-control" disabled/>
+                <span asp-validation-for="SaidaUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvisoUser" class="control-label"></label>
+                <input asp-for="AvisoUser" class="form-control" disabled/>
+                <span asp-validation-for="AvisoUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConteudoUser" class="control-label"></label>
+                <input asp-for="ConteudoUser" class="form-control" disabled/>
+                <span asp-validation-for="ConteudoUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
